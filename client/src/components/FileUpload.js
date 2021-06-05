@@ -10,8 +10,6 @@ const FileUpload = () => {
   const [message, setMessage] = useState("");
   const [uploadPercentage, setUploadPercentage] = useState(0);
 
-  const validFileExtensions = [".mp4", ".mkv", ".wmv", ".gif"];
-
   const onChange = (e) => {
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
@@ -63,7 +61,8 @@ const FileUpload = () => {
             type="file"
             className="custom-file-input"
             id="customFile"
-            accept="image/x-png,image/gif,image/jpeg"
+            name="file"
+            accept=".mp4,.flv,.mkv,.wmv"
             onChange={onChange}
           />
           <label className="custom-file-label" htmlFor="customFile">
